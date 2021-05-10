@@ -7,6 +7,36 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+  <!-- smooth scroll -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+  
   <link rel="stylesheet" type="text/css" href="style.css">
 
 <title>ps</title>
@@ -14,7 +44,7 @@
 </head>
 <body>
 
-<div class="bg1">
+<div class="bg1" id="wb1">
 <!-- Navigation-->
 <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #180000 ;">
   <div class="container-fluid">
@@ -24,11 +54,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand nv" href="#">WebSiteName</a>
+      <a class="navbar-brand nv" href="#wb1">WebSiteName</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li class="nv"><a href="#">Home</a></li>
+        <li class="nv"><a href="#wb1">Home</a></li>
   <!--      <li class="dropdown js-scroll-trigger nv">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
           <ul class="dropdown-menu">
